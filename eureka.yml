@@ -1,0 +1,17 @@
+server:
+  port: ${app.eureka-port}
+
+eureka:
+  instace:
+    hostname: ${app.eureka-server}
+    leaseRenewalIntervalInSeconds: 30
+  client:
+    registerWhitEureka: false
+    fetchRegistry: false
+    serviceURL:
+      defaultZone: http://${app.eureka-server}:${app.eureka-port}/eureka
+  server:
+    waitTimeInMsWhenSyncEmpty: 0
+    response-cache-update-interval-ms: 5000
+    enable-self-preservation: true
+    renawalPercentThreshold: 0.49
